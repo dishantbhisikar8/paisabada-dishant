@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – PaisaBada</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f1f5f9;
+        }
+
+        /* OVERLAY CENTER */
+        .about-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        /* BIG CARD */
+        .about-card-main {
+            background: #ffffff;
+            max-width: 1200px;
+            width: 100%;
+            border-radius: 22px;
+            padding: 34px;
+            box-shadow: 0 30px 70px rgba(2, 6, 23, 0.18);
+        }
+
+        /* HEADER */
+        .about-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .about-header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #020617;
+        }
+
+        /* .close-btn {
+            background: transparent;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #0f766e;
+        } */
+
+        .close-btn {
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #0f766e;
+        }
+
+
+        /* GRID */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        /* INNER CARD */
+        .about-box {
+            border: 1px solid #e5f3f3;
+            border-radius: 18px;
+            padding: 26px;
+            transition: all .3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(2, 6, 23, 0.08);
+        }
+
+        /* TAG */
+        .tag {
+            display: inline-block;
+            background: #e6fffa;
+            color: #0f766e;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        /* TEXT */
+        .about-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        /* VALUES */
+        .values {
+            padding-left: 18px;
+        }
+
+        .values li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        /* FOUNDER */
+        .founder-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .founder-card {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 26px;
+        }
+
+        .founder-img {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        .founder-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .founder-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .signature {
+            margin-top: 14px;
+            font-weight: 700;
+            color: #0f766e;
+        }
+
+        /* TRUST STRIP */
+        .trust-strip {
+            margin-top: 36px;
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ecfdf5, #e0f2fe);
+            text-align: center;
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        /* DISCLAIMER */
+        .irdai-note {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-card {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-img {
+                max-width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="about-wrapper">
+
+        <div class="about-card-main">
+
+            <!-- HEADER -->
+            <div class="about-header">
+                <h1>About Us / Company Profile</h1>
+                <!-- <button class="close-btn">✕</button> -->
+                <a href="index.html" class="close-btn">✕</a>
+
+            </div>
+
+            <!-- MISSION / VISION / VALUES -->
+            <div class="about-grid">
+
+                <div class="about-box">
+                    <span class="tag">Mission</span>
+                    <h3>Why we exist</h3>
+                    <p>
+                        Money decisions are confusing — and often unfair.
+                        PaisaBada exists to help everyday Indians choose
+                        the right insurance, investments, and loans
+                        without pressure, bias, or fine print.
+                    </p>
+                </div>
+
+                <div class="about-box">
+                    <span class="tag">Vision</span>
+                    <h3>Where we’re going</h3>
+                    <p>
+                        To become India’s most trusted digital financial partner —
+                        where technology simplifies choices
+                        and humans step in when real help is needed.
+                    </p>
+                </div>
+
+                <div class="about-box">
+                    <span class="tag">Core Values</span>
+                    <h3>How we work</h3>
+                    <ul class="values">
+                        <li><strong>Transparency</strong> — no hidden clauses.</li>
+                        <li><strong>Customer First</strong> — advice that fits you.</li>
+                        <li><strong>Smart Tech</strong> — tools that save time.</li>
+                        <li><strong>Trust & Compliance</strong> — IRDAI / RBI aware.</li>
+                        <li><strong>Support</strong> — help even after purchase.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- FOUNDER MESSAGE -->
+            <div class="founder-section">
+
+                <div class="founder-card">
+                    <img src="family.png" alt="Founder" class="founder-img">
+
+                    <div>
+                        <span class="tag">From the Founder</span>
+                        <h3>A note from someone who’s been there</h3>
+
+                        <p>
+                            I started PaisaBada after seeing how confusing
+                            financial decisions can feel — especially when
+                            you’re just trying to do the right thing.
+                        </p>
+
+                        <p>
+                            Insurance and money shouldn’t feel like traps.
+                            They should feel simple, honest, and in your control.
+                            That’s the standard we hold ourselves to.
+                        </p>
+
+                        <p>
+                            We don’t push products.
+                            We help you make better money decisions —
+                            with clarity, confidence, and long-term trust.
+                        </p>
+
+                        <p class="signature">— Founder, PaisaBada</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TRUST STRIP -->
+            <div class="trust-strip">
+                We don’t sell fear. We build clarity.
+            </div>
+
+            <!-- DISCLAIMER -->
+            <p class="irdai-note">
+                PaisaBada is a registered insurance web aggregator.
+                Insurance products are offered by IRDAI-licensed insurers only.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaisaBada – Smart Financial Platform</title>
+    <meta name="description"
+        content="Compare Insurance, Mutual Funds & Loans. Become a financial partner and grow with PaisaBada.">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+
+        /* HERO */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 60px;
+            /* background: linear-gradient(135deg, #0bc58d, #82f0e7); */
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: .9;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #020617;
+            padding: 12px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .btn.outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #38bdf8;
+        }
+
+        .hero img {
+            width: 420px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 70px 60px
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        /* CARDS */
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+            text-align: center;
+            transition: .3s;
+        }
+
+        .card i {
+            font-size: 36px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* PARTNER */
+        .partner {
+            background: #020617;
+            color: #fff;
+        }
+
+        .partner .card {
+            background: #0f172a;
+        }
+
+        /* FOOTER */
+        /* footer {
+            background: #020617;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        } */
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25d366;
+            color: #fff;
+            padding: 16px;
+            border-radius: 50%;
+            font-size: 24px;
+        }
+
+        /* ANIMATIONS */
+        .animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: .7s;
+        }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .hero img {
+                margin-top: 40px;
+                width: 300px
+            }
+
+            header {
+                padding: 15px 25px
+            }
+
+            section {
+                padding: 60px 25px
+            }
+        }
+
+        /* LOGO ANIMATION */
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 86px;
+            opacity: 0;
+            transform: scale(0.85);
+            animation: logoIntro 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        /* Intro animation */
+        @keyframes logoIntro {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Glow pulse */
+        @keyframes logoGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.6));
+            }
+        }
+
+        /* Hover micro-interaction */
+        .logo-img:hover {
+            transform: scale(1.05) rotate(-1deg);
+            filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.8));
+            transition: 0.3s ease;
+        }
+
+        /* Mobile size fix */
+        @media(max-width:600px) {
+            .logo-img {
+                height: 38px;
+            }
+        }
+
+        /* =====================
+               NAVBAR
+        ===================== */
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 50px;
+            border-bottom: 1px solid #e5e7eb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* LEFT */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .nav-logo {
+            height: 90px;
+        }
+
+        /* RIGHT */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .login-btn {
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 999px;
+        }
+
+        .signup-btn {
+            text-decoration: none;
+            background: #38bdf8;
+            color: #020617;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* HOVER */
+
+        .signup-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .top-nav {
+                padding: 15px 25px;
+            }
+        }
+
+        /*********** HERO NEW ******/
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 80px 8%;
+        }
+
+        /* Background Video */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Dark overlay for readability */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(2, 6, 23, 0.75),
+                    rgba(2, 6, 23, 0.55));
+            z-index: 2;
+        }
+
+        /* Content Layer */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            color: #fff;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Text */
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 25px;
+        }
+
+        /* Illustration */
+        .hero-illustration {
+            max-width: 420px;
+            width: 100%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-illustration {
+                max-width: 300px;
+            }
+        }
+
+        /***** footer  ***/
+        .site-footer {
+            background: #0b0f0e;
+            color: #cbd5f5;
+            padding: 70px 8% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.4fr;
+            gap: 60px;
+        }
+
+        .site-footer {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 0.8s ease;
+        }
+
+        .site-footer.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Brand */
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #22c55e, #38bdf8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            margin-bottom: 18px;
+            color: #94a3b8;
+        }
+
+        /* Social icons */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-icons .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform .25s ease, background .25s ease;
+        }
+
+        .social-icons svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        .social-icons .icon:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: linear-gradient(135deg, #22c55e, #38bdf8);
+        }
+
+        /* Columns */
+        .footer-col h4 {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #cbd5f5;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color .2s;
+        }
+
+        .footer-col a:hover {
+            color: #22c55e;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .address {
+            margin-top: 14px;
+            color: #94a3b8;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Banner */
+        .tm-banner {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #e8faf4, #c9f0e3);
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        /* LEFT */
+        .tm-left {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 22px;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .tm-tag {
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #10b981;
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: .5px;
+        }
+
+        .tm-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tm-brand {
+            font-size: 34px;
+            font-weight: 800;
+            color: #059669;
+        }
+
+        .tm-domain {
+            font-size: 14px;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-top: 2px;
+        }
+
+        /* MIDDLE */
+        .tm-middle {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .tm-middle .tm-tag {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tm-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .tm-action {
+            text-align: center;
+            font-size: 14px;
+            color: #065f46;
+        }
+
+        .tm-action .icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #ecfdf5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 12px;
+        }
+
+        .tm-action svg {
+            width: 22px;
+            height: 22px;
+            stroke: #059669;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+
+        /* RIGHT */
+        .tm-right {
+            min-width: 180px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tm-btn {
+            background: #0f172a;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .tm-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .tm-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tm-actions {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* ===== SCROLL IN ANIMATION ===== */
+        .tm-banner {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 0.9s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .tm-banner.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== STAGGER CHILD ANIMATION ===== */
+        .tm-left,
+        .tm-middle,
+        .tm-right {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .tm-banner.show .tm-left {
+            animation: fadeUp .6s ease forwards;
+        }
+
+        .tm-banner.show .tm-middle {
+            animation: fadeUp .6s ease forwards;
+            animation-delay: .15s;
+        }
+
+        .tm-banner.show .tm-right {
+            animation: fadeUp .6s ease forwards;
+            animation-delay: .3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== ICON FLOAT / PULSE ===== */
+        .tm-action .icon {
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .tm-action:nth-child(2) .icon {
+            animation-delay: .3s;
+        }
+
+        .tm-action:nth-child(3) .icon {
+            animation-delay: .6s;
+        }
+
+        @keyframes iconFloat {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== BUTTON GLOW ===== */
+        .tm-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tm-btn::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center,
+                    rgba(255, 255, 255, .25),
+                    transparent 60%);
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .tm-btn:hover::after {
+            opacity: 0;
+        }
+
+
+        /* ************************************  product */
+
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 0 0 12px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+
+
+        .card img {
+            width: 40px;
+            margin-bottom: 10px;
+            transition: transform .3s ease;
+        }
+
+        .card span {
+            display: block;
+            font-weight: 600;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(11, 92, 255, .15);
+            border-color: #c7d2fe;
+        }
+
+        .card:hover img {
+            transform: scale(1.15) rotate(-4deg);
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e6f6ed;
+            color: #0f9d58;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .small-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            width: 240px;
+            cursor: pointer;
+            transition: all .25s ease;
+        }
+
+        .small-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(11, 92, 255, .15);
+            border-color: #c7d2fe;
+        }
+
+        .small-card img {
+            width: 32px;
+        }
+
+        /* ================= PROMO SLIDER ================= */
+
+        .promo {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* FULL IMAGE SLIDE */
+        .slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity .6s ease;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* DARK OVERLAY */
+        .slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .25));
+        }
+
+        /* TEXT UPPER CENTER */
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            padding: 50px 20px 0;
+            color: #fff;
+        }
+
+        .slide-content h2 {
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .slide-content span {
+            color: #22c55e;
+            font-weight: 800;
+        }
+
+        /* BUTTON BOTTOM CENTER */
+        .btn-button {
+            background: #38bdf8;
+            color: #020617;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .slide-btn {
+            position: absolute;
+            left: 50%;
+            bottom: 36px;
+            transform: translateX(-50%);
+            z-index: 3;
+            overflow: hidden;
+            transition: all .3s ease;
+            box-shadow:
+                0 10px 22px rgba(2, 6, 23, .25),
+                inset 0 -2px 0 rgba(255, 255, 255, .15);
+        }
+
+        .slide-btn:hover {
+            transform: translateX(-50%) translateY(-2px) scale(1.02);
+            box-shadow:
+                0 18px 36px rgba(2, 6, 23, .35),
+                inset 0 -2px 0 rgba(255, 255, 255, .2);
+        }
+
+        /* PULSE EFFECT */
+        .slide-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 0 0 rgba(15, 23, 42, .35);
+            animation: pulse 2.4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(15, 23, 42, .35);
+            }
+
+            70% {
+                box-shadow: 0 0 0 14px rgba(15, 23, 42, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(15, 23, 42, 0);
+            }
+        }
+
+        /* DOTS BOTTOM CENTER */
+        .dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .dot.active {
+            width: 20px;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .promo {
+                height: 360px;
+            }
+
+            .slide-content h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* PRODUCTS SECTION HEADING */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 0;
+        }
+
+        .products-heading {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #0f172a;
+        }
+
+        .heading-name {
+            color: #22c55e;
+        }
+
+        /******************************** choose section */
+        .why {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            border-radius: 20px;
+            padding: 26px 22px;
+            text-align: center;
+            transition: all .3s ease;
+        }
+
+        .why-card h4 {
+            margin: 14px 0 8px;
+            font-size: 18px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* ICON */
+        .why-card .icon {
+            width: 56px;
+            height: 56px;
+            margin: auto;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        /* LIGHT COLORS */
+        .why-card.blue {
+            background: #f3ebeb;
+        }
+
+        .why-card.blue .icon {
+            background: #dbe7ff;
+            color: #2563eb;
+        }
+
+        .why-card.green {
+            background: #ecfdf5;
+        }
+
+        .why-card.green .icon {
+            background: #d1fae5;
+            color: #16a34a;
+        }
+
+        .why-card.yellow {
+            background: #fffbeb;
+        }
+
+        .why-card.yellow .icon {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .why-card.purple {
+            background: #f5f3ff;
+        }
+
+        .why-card.purple .icon {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+
+        /* HOVER EFFECT */
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(2, 6, 23, .12);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .why {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ================= INSURANCE PARTNERS ================= */
+
+        .insurance-partners {
+            padding: 70px 0;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+
+        .partners-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #0f172a;
+        }
+
+        .partners-title span {
+            color: #22c55e;
+        }
+
+        /* carousel wrapper */
+        .logo-carousel {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* track */
+        .logo-track {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            width: max-content;
+        }
+
+        /* logos */
+        .logo-track img {
+            height: 64px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.75;
+            transition: all .3s ease;
+        }
+
+        .logo-track img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        /* animations */
+        .logo-track.left {
+            animation: scrollLeft 28s linear infinite;
+        }
+
+        .logo-track.right {
+            animation: scrollRight 28s linear infinite;
+        }
+
+        @keyframes scrollLeft {
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scrollRight {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* mobile */
+        @media (max-width: 768px) {
+            .partners-title {
+                font-size: 26px;
+                padding: 0 20px;
+            }
+
+            .logo-track img {
+                height: 42px;
+            }
+
+            .logo-track {
+                gap: 36px;
+            }
+        }
+
+        /* ================= LUXURY LOGO CAROUSEL ================= */
+
+        .luxury-fade {
+            position: relative;
+        }
+
+        /* gradient fade edges */
+        .luxury-fade::before,
+        .luxury-fade::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .luxury-fade::before {
+            left: 0;
+            background: linear-gradient(to right, #f8fafc 30%, transparent);
+        }
+
+        .luxury-fade::after {
+            right: 0;
+            background: linear-gradient(to left, #f8fafc 30%, transparent);
+        }
+
+        /* pause on hover (desktop) */
+        .logo-carousel:hover .logo-track {
+            animation-play-state: paused;
+        }
+
+        /* pause on touch (mobile) */
+        .logo-track:active {
+            animation-play-state: paused;
+        }
+
+        /* smoother animation */
+        .logo-track {
+            will-change: transform;
+        }
+
+        /* SVG optimization */
+        .logo-track img {
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
+        }
+
+        /* IRDAI note */
+        .irdai-note {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 13px;
+            color: #64748b;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* mobile fade fix */
+        @media (max-width: 768px) {
+
+            .luxury-fade::before,
+            .luxury-fade::after {
+                width: 60px;
+            }
+        }
+
+        /* client-table  */
+
+        /* SECTION */
+        .onboarding-section {
+            padding: 80px 20px;
+            /* background: linear-gradient(180deg, #f3f4f9 0%, #e9e8f0 100%); */
+        }
+
+        /* CARD */
+        .onboarding-card {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 60px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 🔥 GRAPH EFFECT INSIDE CARD */
+        .onboarding-card::before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 60%;
+            height: 60%;
+            background: linear-gradient(180deg, rgba(120, 110, 255, 0.25), rgba(120, 110, 255, 0.05));
+            clip-path: polygon(0% 60%, 10% 55%, 20% 65%, 30% 50%, 40% 58%, 50% 40%, 60% 48%, 70% 30%, 80% 45%, 90% 20%, 100% 35%, 100% 100%, 0% 100%);
+            filter: blur(14px);
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        /* CONTENT ABOVE EFFECT */
+        .onboarding-left,
+        .onboarding-right {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* IMAGE */
+        .onboarding-left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .onboarding-left img {
+            width: 100%;
+            max-width: 310px;
+            filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.25));
+        }
+
+        /* TEXT */
+        .onboarding-right {
+            flex: 1;
+            max-width: 520px;
+        }
+
+        .onboarding-right h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 70px;
+            line-height: 1.3;
+            color: #222;
+        }
+
+        .onboarding-right p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            .onboarding-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+
+            .onboarding-left img {
+                max-width: 210px;
+            }
+
+            .onboarding-right h2 {
+                font-size: 24px;
+            }
+
+            .onboarding-right p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <img src="logo-1.png" class="nav-logo" alt="PaisaBada">
+
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="signup-btn">Sign Up</a>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <!-- <div class="hero">
+        <div>
+            <h1>Grow Your Wealth with Confidence</h1>
+            <p>Compare Insurance, Mutual Funds & Loans — All in One Place</p>
+            <p>Everything you need to grow your MFD business - advanced tech, product research, learning, marketing and
+                full support - so you can focus on your clients.</p>
+            <a class="btn" href="#products">Compare Plans</a>
+            <a class="btn outline" href="#partner">Become Partner</a>
+        </div>
+
+        Illustration Image
+        <img src="https://illustrations.popsy.co/blue/finance-growth.svg" alt="Finance Growth">
+    </div> -->
+
+    <!-- HERO -->
+    <div class="hero">
+
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="animated-video-2 - Trim.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div>
+                <h1>Grow Your Wealth with Confidence</h1>
+                <p>
+                    Everything you need to grow your MFD business – advanced tech,
+                    product research, learning, marketing and full support – so you
+                    can focus on your clients.
+                </p>
+
+                <a class="btn" href="#products">Compare Plans</a>
+                <a class="btn outline" href="#partner">Become Partner</a>
+            </div>
+
+            <!-- Illustration Image -->
+            <!-- <img src="https://illustrations.popsy.co/blue/finance-growth.svg" alt="Finance Growth"
+                class="hero-illustration"> -->
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div class="products-section">
+        <h2 class="products-heading">
+            Explore our insurance products. <span class="heading-name"> Get instant quotes.</span>
+        </h2>
+        <div class="container">
+
+            <!-- LEFT -->
+            <div>
+                <h1>Quick. Secure. Faster.</h1>
+                <p class="subtitle">
+                    Simplifying your insurance & financial journey with trust.
+                </p>
+
+                <div class="products">
+                    <div class="card">
+                        <img src="car.png">
+                        <span>Motor</span>
+                    </div>
+
+                    <div class="card">
+                        <img src="healthcare.png">
+                        <span>Health</span>
+                    </div>
+
+                    <div class="card">
+                        <img src="life.png">
+                        <span>Life</span>
+                    </div>
+
+                    <div class="card">
+                        <!-- <div class="badge">OPD + Insurance</div> -->
+                        <img src="family-insurance.png">
+                        <span>Term</span>
+                    </div>
+                </div>
+
+                <div class="section-title">Empowering your financial future</div>
+
+                <div class="small-card">
+                    <img src="possibility.png">
+                    <strong>EXPLORE MORE</strong>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="promo">
+
+                <div class="slide active" style="background-image:url('health.jpg')">
+                    <div class="slide-content">
+                        <h2>Safeguard your family<br />and your <span>health!</span></h2>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image:url('health-2.jpg')">
+                    <div class="slide-content">
+                        <h2>Plans that<br /><span>protect</span> your future</h2>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image:url('health-3.jpg')">
+                    <div class="slide-content">
+                        <h2>Smart insurance<br />for <span>every stage</span></h2>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-button slide-btn" id="slideBtn">
+                    Best plans, Just for you →
+                </a>
+
+                <!-- DOTS -->
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- client-table  -->
+
+    <section class="onboarding-section">
+
+        <div class="onboarding-card">
+
+            <!-- LEFT IMAGE -->
+            <div class="onboarding-left">
+                <img src="mobile-new-removebg-preview.png" alt="Client Onboarding">
+            </div>
+
+            <!-- RIGHT TEXT -->
+            <div class="onboarding-right">
+
+                <h2>Client Onboarding Link & Personalised Web Page</h2>
+
+                <p>
+                    Impress clients with your own webpage. Add your logo, photo,
+                    tagline and contact. Available in 9 languages, your page
+                    comes with an inquiry form.
+                </p>
+
+                <p>
+                    Every lead is synced to your dashboard, with email and WhatsApp
+                    notifications sent directly to you for faster follow-ups.
+                </p>
+
+                <!-- <button class="onboarding-btn">Learn More</button> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- <section id="products">
+        <h2>Explore our insurance products. Get instant quotes.</h2>
+        <div class="grid">
+            <div class="card animate"><i class="fa-solid fa-heart-pulse"></i>
+                <h3>Health Insurance</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-user-shield"></i>
+                <h3>Term Insurance</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-house"></i>
+                <h3>Home Loan</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-briefcase"></i>
+                <h3>Business Loan</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-piggy-bank"></i>
+                <h3>SIP & Mutual Funds</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-car"></i>
+                <h3>Motor Insurance</h3>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Banner -->
+
+
+
+    <!-- TOOLS -->
+    <section id="tools">
+        <h2>Smart Financial Tools</h2>
+        <div class="grid">
+            <div class="card animate"><i class="fa-solid fa-calculator"></i>
+                <h3>SIP Calculator</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-chart-pie"></i>
+                <h3>Financial Health Check</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-id-card"></i>
+                <h3>Credit Score</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section id="partner" class="partner">
+        <h2>Become a PaisaBada Partner</h2>
+        <div class="grid">
+            <div class="card animate"><i class="fa-solid fa-money-bill-wave"></i>
+                <h3>High Commission</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-laptop"></i>
+                <h3>Digital Platform</h3>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-headset"></i>
+                <h3>Training & Support</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- banner section  -->
+
+    <div class="tm-banner">
+        <!-- Left -->
+        <div class="tm-left">
+            <span class="tm-tag">WITH</span>
+
+            <div class="tm-logo">
+                <span class="tm-brand">PaisaBada</span>
+                <span class="tm-domain">INSURANCE.COM</span>
+            </div>
+        </div>
+
+        <!-- Middle -->
+        <div class="tm-middle">
+            <span class="tm-tag">YOU CAN NOW</span>
+
+            <div class="tm-actions">
+                <div class="tm-action">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                            <path d="M14 2v6h6" />
+                            <path d="M9 14l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <p>Buy a<br><strong>New Policy</strong></p>
+                </div>
+
+                <div class="tm-action">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+                            <path d="M21 3v6h-6" />
+                        </svg>
+                    </div>
+                    <p>Renew your<br><strong>Existing Policy</strong></p>
+                </div>
+
+                <div class="tm-action">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <p>Raise<br><strong>Claims</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="tm-right">
+            <a href="#" class="tm-btn">EXPLORE NOW</a>
+        </div>
+    </div>
+
+    <!-- ================= INSURANCE PARTNERS ================= -->
+    <section class="insurance-partners">
+        <h2 class="partners-title">
+            Trusted Insurance <span>Partners</span>
+        </h2>
+
+        <div class="logo-carousel luxury-fade">
+
+            <!-- ROW 1 (Left → Right) -->
+            <div class="logo-track left">
+                <img src="logos/LIC-Logo.png" alt="LIC">
+                <img src="logos/hdfc.jpg" alt="HDFC Life">
+                <img src="logos/icici-pru-life.webp" alt="ICICI Prudential">
+                <img src="logos/sbi-life.png" alt="SBI Life">
+                <img src="logos/max-life.png" alt="Max Life">
+                <img src="logos/tata-AIA.png" alt="Tata AIA">
+                <img src="logos/kotak-life.png" alt="Kotak Life">
+                <img src="logos/bajaj.png" alt="Bajaj Allianz Life">
+                <img src="logos/go digit.png" alt="Go Digit Life Insurance Limited">
+                <img src="logos/union.png" alt="Union Dai-Ichi Life Insurance Company Limited">
+                <img src="logos/aditya-birla.jfif" alt="Aditya Birla SunLife Insurance Company Limited">
+            </div>
+
+            <!-- ROW 2 (Right → Left) -->
+            <div class="logo-track right">
+                <img src="logos/Star_Health_and_Allied_Insurance.svg.png" alt="Star Health">
+                <img src="logos/HDFC-Ergo-logo.png" alt="HDFC ERGO">
+                <img src="logos/Icici-Lombard-Logo-Vector.svg-.png" alt="ICICI Lombard">
+                <img src="logos/tata.png" alt="Tata AIG">
+                <img src="logos/new-india-life.png" alt="New India Assurance">
+                <img src="logos/niva.png" alt="Niva Bupa">
+                <img src="logos/care-health.png" alt="Care Health">
+                <img src="logos/met-life.png" alt="MetLife India Insurance Company Limited">
+                <img src="logos/reliance-general.png" alt="Reliance General">
+                <img src="logos/acko.png" alt="Acko Life Insurance Limited">
+                <img src="logos/credit-life.png" alt="CreditAccess Life Insurance Limited">
+            </div>
+
+        </div>
+
+        <!-- IRDAI DISCLAIMER -->
+        <p class="irdai-note">
+            PaisaBada is a registered insurance web aggregator. Insurance products are offered by IRDAI-licensed
+            insurers.
+            IRDAI Registration No: <strong>XXXX</strong>.
+        </p>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section">
+        <h2>Why Choose Paisabada?</h2>
+
+        <div class="why">
+            <div class="why-card blue">
+                <div class="icon">🧠</div>
+                <h4>Simple & Transparent Advice</h4>
+                <p>No jargon. Clear recommendations you can trust.</p>
+            </div>
+
+            <div class="why-card green">
+                <div class="icon">🔐</div>
+                <h4>Secure & Compliant Platform</h4>
+                <p>IRDAI-aligned systems with strong data security.</p>
+            </div>
+
+            <div class="why-card yellow">
+                <div class="icon">⚡</div>
+                <h4>Instant Quotes & Issuance</h4>
+                <p>Compare plans and get covered in minutes.</p>
+            </div>
+
+            <div class="why-card purple">
+                <div class="icon">🤝</div>
+                <h4>Human + Tech Support</h4>
+                <p>Expert help backed by smart technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="grid">
+            <div class="card animate"><i class="fa-solid fa-envelope"></i>
+                <p>support@paisabada.com</p>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-phone"></i>
+                <p>+91 7620 444 000</p>
+            </div>
+            <div class="card animate"><i class="fa-solid fa-clock"></i>
+                <p>Mon–Sat | 10AM–7PM</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <footer>
+        © 2025 PaisaBada. All rights reserved.
+    </footer> -->
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-col brand">
+                <h3 class="footer-logo">PaisaBada</h3>
+                <p class="footer-desc">PaisaBada Fintech Solutions Ltd.</p>
+
+                <div class="social-icons">
+                    <!-- X / Twitter -->
+                    <a href="#" aria-label="X" class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.67l-5.224-6.836-5.98 6.836H1.645l7.73-8.84L1.25 2.25h6.84l4.72 6.23 5.434-6.23z" />
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram" class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
+                        </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook" class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 12a10 10 0 10-11.5 9.95v-7.04H7.9V12h2.6V9.8c0-2.57 1.53-4 3.88-4 1.13 0 2.3.2 2.3.2v2.52h-1.3c-1.28 0-1.68.8-1.68 1.62V12h2.85l-.45 2.91h-2.4v7.04A10 10 0 0022 12z" />
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn" class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5a2.48 2.48 0 110 4.96 2.48 2.48 0 010-4.96zM3 8.98h3.96V21H3zM9.98 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-3.96v-5.3c0-1.26-.02-2.88-1.76-2.88-1.76 0-2.03 1.37-2.03 2.78V21H9.98z" />
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube" class="icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.5 6.2a2.9 2.9 0 00-2-2.05C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.65a2.9 2.9 0 00-2 2.05A30.3 30.3 0 000 12a30.3 30.3 0 00.5 5.8 2.9 2.9 0 002 2.05c1.8.65 9.5.65 9.5.65s7.7 0 9.5-.65a2.9 2.9 0 002-2.05A30.3 30.3 0 0024 12a30.3 30.3 0 00-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#products">Compare Plans</a>
+                <a href="#partner">Become an Advisor</a>
+                <!-- <a href="#">B2B Solutions</a> -->
+                <a href="#">Careers</a>
+                <a href="#">Press Kit</a>
+                <a href="about.html">About Us</a>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong><br>support@paisabada.com</p>
+                <p><strong>Phone:</strong><br>1800 266 0101</p>
+
+                <p class="address">
+                    <strong>Registered & Corporate Office:</strong><br>
+                    The ORB Sahar, 4 & 4A, 1st Floor,<br>
+                    A Wing, Marol Village, Andheri East,<br>
+                    Mumbai 400 099, Maharashtra, India
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Paisabada™ Financial Services. Powered by Wealtrix™ Fintech Pvt Ltd.
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/917620444000" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const elements = document.querySelectorAll('.animate');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('show') }
+            });
+        });
+        elements.forEach(el => obs.observe(el));
+    </script>
+    <script>
+        const footer = document.querySelector('.site-footer');
+
+        const footerObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    footer.classList.add('show');
+                }
+            },
+            { threshold: 0.15 }
+        );
+
+        footerObserver.observe(footer);
+    </script>
+    <script>
+        const tmBanner = document.querySelector('.tm-banner');
+
+        const bannerObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    tmBanner.classList.add('show');
+                    bannerObserver.disconnect();
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        bannerObserver.observe(tmBanner);
+    </script>
+
+
+    <script>
+        let index = 0;
+
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const btn = document.getElementById('slideBtn');
+
+        const btnTexts = [
+            "Best plans, Just for you →",
+            "Protect your future today →",
+            "Explore smart coverage →"
+        ];
+
+        function showSlide(i) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+
+            slides[i].classList.add('active');
+            dots[i].classList.add('active');
+
+            /* button text change */
+            btn.style.opacity = 0;
+            setTimeout(() => {
+                btn.textContent = btnTexts[i];
+                btn.style.opacity = 1;
+            }, 200);
+        }
+
+        dots.forEach((dot, i) => {
+            dot.onclick = () => {
+                index = i;
+                showSlide(index);
+            }
+        });
+
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }, 3000);
+
+        showSlide(0);
+    </script>
+</body>
+
+</html>
