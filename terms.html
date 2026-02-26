@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paisabada Terms & Compliance</title>
+    <title>Terms & Legal | Paisabada</title>
 
     <style>
         body {
             margin: 0;
-            font-family: Inter, system-ui, -apple-system, sans-serif;
+            font-family: Inter, system-ui, -apple-system;
             background: #f6f8fc;
             color: #1f2937;
             line-height: 1.8;
@@ -17,177 +17,213 @@
 
         .hero {
             background: linear-gradient(135deg, #002b5b, #00b4b0);
-            color: white;
-            padding: 70px 20px;
+            color: #fff;
+            padding: 60px 20px;
             text-align: center;
-        }
-
-        .hero h1 {
-            margin: 0;
-            font-weight: 600;
+            position: relative;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 30px 20px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
+            background: #fff;
+            padding: 24px;
             border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            margin-bottom: 28px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .05);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0
         }
 
         h2 {
             color: #002b5b;
-            margin-top: 0;
-        }
-
-        h3 {
-            margin-bottom: 6px;
-        }
-
-        ul {
-            padding-left: 18px;
+            margin-top: 0
         }
 
         .footer {
             background: #0f172a;
             color: #cbd5e1;
-            padding: 40px 20px;
-            font-size: 14px;
+            padding: 30px 20px;
             text-align: center;
+            font-size: 14px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            background: #ffffff20;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+
+        .back-btn:hover {
+            background: #ffffff40;
+        }
+
+        .back-btn svg {
+            fill: white;
+            width: 20px;
+        }
+
+        @media(max-width:600px) {
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
         }
     </style>
-
 </head>
 
 <body>
 
     <div class="hero">
-        <h1>Paisabada Legal, Terms & Compliance</h1>
-        <p>Effective Date: [Add Date]</p>
+        <div class="back-btn" onclick="history.back()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </div>
+        <h1>Terms & Legal</h1>
+        <p>Effective Date: 01 March 2026</p>
     </div>
 
     <div class="container">
 
         <div class="card">
-            <h2>🏛 Legal Structure Disclosure</h2>
-            <p>Paisabada Vault is a technology platform owned and operated by <strong>Wealtrix Fintech Private
-                    Limited</strong>, incorporated under the Companies Act, 2013.</p>
-            <p>Insurance facilitation services are provided by <strong>Paisabada Financial Services
-                    (Proprietorship)</strong>, operating as a POSP under authorized insurance intermediary arrangements.
-            </p>
+            <h2>🏛 Platform Nature</h2>
+            <p>Paisabada is a technology-enabled insurance facilitation platform operated by <strong>Wealtrix Fintech
+                    Pvt Ltd</strong>.
+                Insurance facilitation services are provided by <strong>Paisabada Financial Services</strong>
+                (Authorised POS Insurance Facilitator).</p>
         </div>
 
         <div class="card">
-            <h2>📜 Terms & Conditions</h2>
+            <h2>👤 User Eligibility</h2>
+            <p>By accessing or using this platform, users confirm that they are legally competent to enter into binding
+                contracts under applicable laws of India.</p>
+        </div>
 
-            <h3>1. Nature of Platform</h3>
-            <p>Paisabada Vault is a financial awareness and engagement platform, rewards-based system, and insurance
-                facilitation platform. The platform does not act as an insurance company, broker, underwriter, or issuer
-                of insurance contracts.</p>
+        <div class="card">
+            <h2>🔐 Account Responsibility</h2>
+            <p>Users are responsible for maintaining confidentiality of login credentials and OTP access.
+                Any activity conducted through the registered account shall be deemed authorised by the user.</p>
+        </div>
 
-            <h3>2. Eligibility</h3>
-            <ul>
-                <li>Users must be at least 18 years of age</li>
-                <li>Provide accurate information</li>
-                <li>Use platform lawfully</li>
-            </ul>
+        <div class="card">
+            <h2>📄 Insurance Contract</h2>
+            <p>Insurance contracts are executed directly between the customer and the issuing insurance company.
+                Paisabada acts solely as a facilitator and does not assume underwriting risk.</p>
+        </div>
 
-            <h3>3. Insurance Facilitation</h3>
-            <p>Insurance proposals are processed through licensed intermediaries and IRDAI-registered insurers. Final
-                underwriting, pricing, approval, and claim decisions rest solely with the insurer.</p>
+        <div class="card">
+            <h2>⚖️ No Underwriting Responsibility</h2>
+            <p>Paisabada does not underwrite insurance policies, determine premiums, approve proposals, or settle
+                claims.
+                Insurance products are issued and administered by IRDAI-licensed insurers.</p>
+        </div>
 
-            <h3>4. Premium Payments</h3>
-            <p>The platform does not collect or hold insurance premiums. All payments are processed directly by insurers
-                or licensed intermediaries.</p>
+        <div class="card">
+            <h2>📊 Product Information Accuracy</h2>
+            <p>While reasonable efforts are made to keep product information updated, final product terms, pricing, and
+                benefits are governed solely by insurer policy wording.
+                In case of discrepancy, the insurer’s official policy document shall prevail.</p>
+        </div>
 
-            <h3>5. No Financial Advice</h3>
-            <p>Content is for informational purposes only and does not constitute financial, investment, or insurance
-                advisory services.</p>
+        <div class="card">
+            <h2>🛠 Claims Assistance</h2>
+            <p>Paisabada may assist users in coordinating claim documentation and communication.
+                Claim approval, assessment, timelines, and payouts are determined solely by the respective insurer.</p>
+        </div>
 
-            <h3>6. Limitation of Liability</h3>
-            <p>Wealtrix Fintech Pvt Ltd and Paisabada Financial Services shall not be liable for policy rejection, claim
-                disputes, underwriting decisions, delays, or losses.</p>
+        <div class="card">
+            <h2>💼 No Financial Advisory</h2>
+            <p>Information provided on this platform is for general informational purposes only and should not be
+                considered financial, investment, tax, or advisory services.</p>
+        </div>
 
-            <h3>7. Governing Law</h3>
-            <p>These Terms are governed by the laws of India with jurisdiction in Nagpur, Maharashtra.</p>
+        <div class="card">
+            <h2>🪙 Paisabada Coins</h2>
+
+            <p><strong>Definition:</strong> Paisabada Coins are loyalty engagement credits issued at the discretion of
+                the platform for user participation and engagement activities.</p>
+
+            <p>Coins do not represent cash value, stored monetary value, premium rebate, insurance discount, investment
+                return, or financial instrument.</p>
+
+            <p>Coins cannot be transferred, encashed, or converted into cash.</p>
+
+            <p>Paisabada Coins are part of a platform-level engagement program and are not intended to influence
+                insurance purchasing decisions.
+                Insurance premium and policy terms are determined solely by the respective insurer.</p>
+
+            <p>Coins may be redeemed for platform benefits, learning upgrades, or third-party vouchers subject to
+                eligibility and platform rules.</p>
+
+            <p>Coins expire 180 days from issuance unless otherwise specified.</p>
+
+            <p>Paisabada reserves the right to modify, suspend, or withdraw the coin program at its discretion.</p>
 
         </div>
 
         <div class="card">
-            <h2>🔒 Privacy Policy Summary</h2>
-            <ul>
-                <li>We collect personal, technical, and communication data</li>
-                <li>Data used for account management, insurance facilitation, and compliance</li>
-                <li>Data shared with POS entity, insurers, and service providers</li>
-                <li>We do not sell personal data</li>
-                <li>Users may request correction or deletion</li>
-            </ul>
+            <h2>🚫 Suspension or Termination</h2>
+            <p>Paisabada reserves the right to suspend or terminate access to the platform in case of misuse, fraudulent
+                activity, regulatory violation, or breach of these terms.</p>
         </div>
 
         <div class="card">
-            <h2>🛡 Insurance Disclosure</h2>
-            <p>Insurance policies are issued and underwritten by IRDAI-registered insurers. Paisabada Financial Services
-                acts solely as a POSP under authorized intermediary arrangements.</p>
-            <p><strong>Insurance is the subject matter of solicitation.</strong> Please read policy documents carefully
-                before purchase.</p>
+            <h2>© Intellectual Property</h2>
+            <p>All platform content including branding, logos, design elements, graphics, and materials are proprietary
+                to Paisabada or its licensors.
+                Unauthorised reproduction or distribution is prohibited.</p>
         </div>
 
         <div class="card">
-            <h2>🪙 Paisa Coins Disclaimer</h2>
-            <ul>
-                <li>Paisa Coins are promotional reward credits</li>
-                <li>Non-transferable and non-withdrawable</li>
-                <li>Do not represent cash value or premium discount</li>
-                <li>Not financial instruments or stored value</li>
-                <li>Company may modify or discontinue rewards program</li>
-            </ul>
+            <h2>⚖️ Limitation of Liability</h2>
+            <p>Paisabada and Wealtrix Fintech Pvt Ltd shall not be liable for underwriting decisions, claim outcomes,
+                policy cancellations, regulatory changes, or any indirect or consequential losses.</p>
         </div>
 
         <div class="card">
-            <h2>✅ User Consent</h2>
-            <p>By signing up, you agree to our Terms of Use and Privacy Policy and consent to being contacted by
-                Paisabada Financial Services (POSP) and its authorized partners via call, SMS, WhatsApp, or email for
-                insurance facilitation.</p>
+            <h2>🔄 Modification of Terms</h2>
+            <p>Paisabada reserves the right to update or modify these Terms at any time.
+                Revised versions will be published on this page with updated effective date.</p>
         </div>
 
         <div class="card">
-            <h2>🤝 Partner Compliance</h2>
-            <ul>
-                <li>Partners act as referral associates only</li>
-                <li>Cannot advise policies or collect premium</li>
-                <li>Payments structured as incentives</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📋 Compliance & Risk Controls</h2>
-            <ul>
-                <li>No premium discount or manipulation</li>
-                <li>No guaranteed return claims</li>
-                <li>No insurance advisory without license</li>
-                <li>No cash premium collection</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📞 Grievance Redressal</h2>
-            <p>Email: support@paisabada.in</p>
-            <p>Grievance Officer: grievance@paisabada.in</p>
+            <h2>⚖️ Governing Law</h2>
+            <p>These terms shall be governed by the laws of India.
+                Jurisdiction: Nagpur, Maharashtra.</p>
         </div>
 
     </div>
 
     <div class="footer">
-        © 2026 Paisabada™ Financial Services<br>
-        Paisabada Vault is a technology platform owned by Wealtrix Fintech Private Limited.<br>
-        Insurance facilitation services provided by Paisabada Financial Services (POSP).<br>
-        Insurance is the subject matter of solicitation.
+        Paisabada Financial Services is an authorised POS insurance facilitator.
+        Insurance products are offered by IRDAI-licensed insurers only.
+        We do not underwrite policies or settle claims.
+        Final underwriting and claim decisions rest solely with the respective insurance company.
+        <br><br>
+        © 2026 Paisabada™ — Technology powered by Wealtrix Fintech Pvt Ltd
     </div>
 
 </body>
