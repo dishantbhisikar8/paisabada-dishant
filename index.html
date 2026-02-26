@@ -48,7 +48,7 @@
 
         .btn {
             display: inline-block;
-            background: #38bdf8;
+            background: #22c55e;
             color: #020617;
             padding: 12px 26px;
             border-radius: 8px;
@@ -60,7 +60,7 @@
         .btn.outline {
             background: transparent;
             color: #fff;
-            border: 1px solid #38bdf8;
+            border: 1px solid #22c55e;
         }
 
         .hero img {
@@ -88,12 +88,16 @@
 
         /* CARDS */
         .card {
-            background: #fff;
+            background: #0f172a;
             padding: 20px;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
             text-align: center;
             transition: .3s;
+        }
+
+        .products .card {
+            background: #fff;
         }
 
         .card i {
@@ -108,12 +112,17 @@
 
         /* PARTNER */
         .partner {
-            background: #020617;
+            /* background: #020617; */
+            background: #fff;
             color: #fff;
         }
 
+        .partner h2 {
+            color: #0f172a;
+        }
+
         .partner .card {
-            background: #0f172a;
+            background: #fff;
         }
 
         /* FOOTER */
@@ -129,11 +138,36 @@
             position: fixed;
             right: 20px;
             bottom: 20px;
-            background: #25d366;
+            background: #22c55e;
             color: #fff;
             padding: 16px;
             border-radius: 50%;
-            font-size: 24px;
+            font-size: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp::after {
+            content: "Talk to an Advisor";
+            position: absolute;
+            right: 70px;
+            background: #0f172a;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .whatsapp:hover::after {
+            opacity: 1;
+        }
+
+        @media(max-width:768px) {
+            .whatsapp::after {
+                display: none;
+            }
         }
 
         /* ANIMATIONS */
@@ -228,7 +262,7 @@
         /* Mobile size fix */
         @media(max-width:600px) {
             .logo-img {
-                height: 38px;
+                height: 60px;
             }
         }
 
@@ -277,7 +311,7 @@
 
         .signup-btn {
             text-decoration: none;
-            background: #38bdf8;
+            background: #22c55e;
             color: #020617;
             padding: 10px 22px;
             border-radius: 999px;
@@ -317,7 +351,7 @@
             }
 
             .nav-logo {
-                height: 70px;
+                height: 60px;
             }
 
             .login-btn {
@@ -439,6 +473,70 @@
             }
         }
 
+        /* HERO TEXT BLOCK */
+        .hero-text {
+            max-width: 960px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* BUTTON WRAPPER */
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* TRUST STRIP LEFT ALIGN */
+        .trust-strip {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 14px;
+            justify-content: flex-start;
+        }
+
+        /* SOCIAL */
+        .social-proof {
+            margin-top: 12px;
+            font-size: 14px;
+            opacity: .85;
+            text-align: left;
+        }
+
+        /* COMPLIANCE */
+        .compliance {
+            margin-top: 8px;
+            font-size: 12px;
+            opacity: .75;
+            max-width: 520px;
+            text-align: left;
+        }
+
+        /* MOBILE CENTER */
+        @media (max-width: 900px) {
+
+            .hero-text {
+                align-items: center;
+                text-align: center;
+            }
+
+            .trust-strip {
+                justify-content: center;
+            }
+
+            .social-proof,
+            .compliance {
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
 
         /***** footer  ***/
         .site-footer {
@@ -549,6 +647,30 @@
             text-align: center;
             font-size: 13px;
             color: #94a3b8;
+        }
+
+        .footer-mini-bar {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-mini-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        .footer-mini-bar a:hover {
+            color: #22c55e;
+        }
+
+        .footer-mini-bar span {
+            margin: 0 6px;
         }
 
         /* Responsive */
@@ -727,6 +849,14 @@
         .tm-banner.show .tm-right {
             animation: fadeUp .6s ease forwards;
             animation-delay: .3s;
+        }
+
+        .tm-disclaimer {
+            max-width: 900px;
+            margin: 12px auto 0;
+            font-size: 12px;
+            color: #6b7280;
+            text-align: center;
         }
 
         @keyframes fadeUp {
@@ -941,7 +1071,7 @@
 
         /* BUTTON BOTTOM CENTER */
         .btn-button {
-            background: #38bdf8;
+            background: #22c55e;
             color: #020617;
             padding: 14px 20px;
             border-radius: 12px;
@@ -1031,7 +1161,7 @@
             }
 
             .products {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
 
             .promo {
@@ -1062,36 +1192,82 @@
             color: #22c55e;
         }
 
+        .products .card small {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .mini-trust {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .quote-disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
         /******************************** choose section */
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* GRID */
         .why {
             margin-top: 40px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 24px;
         }
 
+        /* CARD */
         .why-card {
             border-radius: 20px;
-            padding: 26px 22px;
+            padding: 28px 22px;
             text-align: center;
             transition: all .3s ease;
+            position: relative;
         }
 
+        /* HOVER */
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(2, 6, 23, .12);
+        }
+
+        /* TEXT */
         .why-card h4 {
             margin: 14px 0 8px;
             font-size: 18px;
+            color: #0f172a;
         }
 
         .why-card p {
             font-size: 14px;
             color: #475569;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* ICON */
         .why-card .icon {
-            width: 56px;
-            height: 56px;
+            width: 58px;
+            height: 58px;
             margin: auto;
             border-radius: 14px;
             display: flex;
@@ -1100,18 +1276,18 @@
             font-size: 26px;
         }
 
-        /* LIGHT COLORS */
+        /* COLORS */
         .why-card.blue {
-            background: #f3ebeb;
+            background: #eff6fc;
         }
 
         .why-card.blue .icon {
-            background: #dbe7ff;
+            background: #dbeafe;
             color: #2563eb;
         }
 
         .why-card.green {
-            background: #ecfdf5;
+            background: #e1f8ed;
         }
 
         .why-card.green .icon {
@@ -1129,7 +1305,7 @@
         }
 
         .why-card.purple {
-            background: #f5f3ff;
+            background: #e9e7f7;
         }
 
         .why-card.purple .icon {
@@ -1137,18 +1313,58 @@
             color: #7c3aed;
         }
 
-        /* HOVER EFFECT */
-        .why-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(2, 6, 23, .12);
+        /* COMPLIANCE NOTE */
+        .irdai-note {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #64748b;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
-        /* RESPONSIVE */
-        @media(max-width:900px) {
+        /* TABLET */
+        @media(max-width:1024px) {
             .why {
                 grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .section h2 {
+                font-size: 30px;
             }
         }
+
+        /* MOBILE */
+        @media(max-width:600px) {
+
+            .section {
+                padding: 50px 16px;
+            }
+
+            .why {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .why-card {
+                padding: 22px 18px;
+            }
+
+            .why-card p {
+                font-size: 14px;
+            }
+
+            .irdai-note {
+                font-size: 12px;
+            }
+        }
+
 
         /* ================= INSURANCE PARTNERS ================= */
 
@@ -1170,6 +1386,21 @@
             color: #22c55e;
         }
 
+        .partners-disclaimer {
+            max-width: 900px;
+            margin: 20px auto 5px;
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .partners-pos {
+            font-size: 12px;
+            color: #94a3b8;
+            text-align: center;
+        }
+
         /* carousel wrapper */
         .logo-carousel {
             display: flex;
@@ -1186,9 +1417,24 @@
         }
 
         /* logos */
-        .logo-track img {
+        /* .logo-track img {
             height: 64px;
             width: auto;
+            filter: grayscale(100%);
+            opacity: 0.75;
+            transition: all .3s ease;
+        } */
+
+        /* uniform logo box */
+        .logo-track img {
+            height: 60px;
+            /* fixed visual height */
+            width: 140px;
+            /* fixed visual width */
+            object-fit: contain;
+            /* keep aspect ratio */
+            object-position: center;
+
             filter: grayscale(100%);
             opacity: 0.75;
             transition: all .3s ease;
@@ -1237,11 +1483,14 @@
             }
 
             .logo-track img {
-                height: 42px;
+                height: 44px;
+                width: 110px;
             }
 
             .logo-track {
-                gap: 36px;
+                gap: 44px;
+                animation-duration: 35s;
+                /* align-items: center; */
             }
         }
 
@@ -1390,9 +1639,27 @@
 
         .onboarding-right p {
             font-size: 16px;
-            color: #555;
+            color: #475569;
             line-height: 1.7;
             margin-bottom: 14px;
+        }
+
+        .vault-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .vault-list li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #374151;
+        }
+
+        .vault-note {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 10px;
         }
 
         /* MOBILE */
@@ -1416,6 +1683,76 @@
             .onboarding-right p {
                 font-size: 15px;
             }
+        }
+
+        /***** tools-section **/
+        .tools-section {
+            padding: 70px 20px;
+            /* background: #f8fafc; */
+            background: #020617;
+            text-align: center;
+        }
+
+        .tools-section h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #fffbeb;
+        }
+
+        .tools-subtext {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 8px;
+        }
+
+        .card h3 {
+            color: #fff;
+        }
+
+        .tool-note {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #0ea5e9;
+        }
+
+        .tools-disclaimer {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        /******* partner ****/
+
+        .partner-subtext {
+            max-width: 700px;
+            margin: 10px auto 30px;
+            color: #0f172a;
+            font-size: 15px;
+        }
+
+        .partner .card h3 {
+            color: #020617;
+        }
+
+        .partner .card p {
+            font-size: 13px;
+            margin-top: 8px;
+            color: #0f172a;
+        }
+
+        .partner-disclaimer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #94a3b8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -1465,21 +1802,47 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <div>
-                <h1>Grow Your Wealth with Confidence</h1>
+
+            <div class="hero-text">
+
+                <h1>Build Smart Financial Protection For Your Family</h1>
+
                 <p>
-                    Everything you need to grow your MFD business – advanced tech,
-                    product research, learning, marketing and full support – so you
-                    can focus on your clients.
+                    Compare Insurance plans, earn rewards, track policies,
+                    and get expert assistance — all in one secure digital vault.
                 </p>
 
-                <a class="btn" href="#products">Compare Plans</a>
-                <a class="btn outline" href="#partner">Become Partner</a>
+                <div class="hero-buttons">
+                    <a class="btn" href="#products">Explore Plans</a>
+                    <a class="btn outline" href="#partner">Open Free Vault</a>
+                </div>
+
+                <!-- TRUST STRIP -->
+                <div class="trust-strip">
+                    <span>🔒 100% Secure</span>
+                    <span>🏢 POS Powered by Paisabada Financial Services</span>
+                    <span>🤝 Assisted Support Available</span>
+                    <span>📊 Transparent Plan Comparison</span>
+                </div>
+
+                <!-- SOCIAL PROOF -->
+                <p class="social-proof">
+                    Join early users building smarter protection decisions.
+                </p>
+
+                <!-- COMPLIANCE -->
+                <p class="compliance">
+                    Insurance services are facilitated through Paisabada Financial Services POS.
+                    Final policy issuance is subject to insurer underwriting.
+                </p>
+
             </div>
+
 
             <!-- Illustration Image -->
             <!-- <img src="https://illustrations.popsy.co/blue/finance-growth.svg" alt="Finance Growth"
                 class="hero-illustration"> -->
+
         </div>
 
     </div>
@@ -1489,46 +1852,65 @@
 
     <div class="products-section">
         <h2 class="products-heading">
-            Explore our insurance products. <span class="heading-name"> Get instant quotes.</span>
+            Compare Insurance Plans <span class="heading-name"> with Transparent Benefits.</span>
         </h2>
         <div class="container">
 
             <!-- LEFT -->
             <div>
-                <h1>Quick. Secure. Faster.</h1>
+                <h1>Compare Insurance Plans in Minutes</h1>
+
                 <p class="subtitle">
-                    Simplifying your insurance & financial journey with trust.
+                    Motor, Health & Term Life plans — with transparent benefits and assisted support.
                 </p>
 
                 <div class="products">
+
                     <div class="card">
                         <img src="car.png">
-                        <span>Motor</span>
+                        <span>Motor Insurance</span>
+                        <small>Instant renewal & new policy quotes</small>
                     </div>
 
                     <div class="card">
                         <img src="healthcare.png">
-                        <span>Health</span>
+                        <span>Health Insurance</span>
+                        <small>Family & individual coverage options</small>
                     </div>
 
                     <div class="card">
-                        <img src="life.png">
-                        <span>Life</span>
-                    </div>
-
-                    <div class="card">
-                        <!-- <div class="badge">OPD + Insurance</div> -->
                         <img src="family-insurance.png">
-                        <span>Term</span>
+                        <span>Term Life Insurance</span>
+                        <small>High cover at affordable premium</small>
                     </div>
+
+                    <div class="card">
+                        <img src="possibility.png">
+                        <span>Personal Accident</span>
+                        <small>Protection against unexpected events</small>
+                    </div>
+
                 </div>
 
-                <div class="section-title">Empowering your financial future</div>
+                <!-- MINI TRUST -->
+                <div class="mini-trust">
+                    <div>🔒 Secure Digital Vault</div>
+                    <div>🎁 Earn Coins on Eligible Actions</div>
+                    <div>🤝 Assisted Policy Support</div>
+                    <div>📄 Claim & Service Tracking</div>
+                </div>
+
+                <!-- COMPLIANCE -->
+                <p class="quote-disclaimer">
+                    Quotes are indicative. Final premium and policy issuance subject to insurer underwriting.
+                </p>
+
+                <!-- <div class="section-title">Empowering your financial future</div>
 
                 <div class="small-card">
                     <img src="possibility.png">
                     <strong>EXPLORE MORE</strong>
-                </div>
+                </div> -->
             </div>
 
             <!-- RIGHT -->
@@ -1577,26 +1959,36 @@
 
             <!-- LEFT IMAGE -->
             <div class="onboarding-left">
-                <img src="mobile-new-removebg-preview.png" alt="Client Onboarding">
+                <img src="mobile-new-removebg-preview.png" alt="Paisabada Digital Vault">
             </div>
 
             <!-- RIGHT TEXT -->
             <div class="onboarding-right">
 
-                <h2>Client Onboarding Link & Personalised Web Page</h2>
+                <h2>Smart Digital Insurance Vault</h2>
 
                 <p>
-                    Impress clients with your own webpage. Add your logo, photo,
-                    tagline and contact. Available in 9 languages, your page
-                    comes with an inquiry form.
+                    Track policies, raise service requests, monitor rewards and get real-time
+                    assistance — all in one secure dashboard.
                 </p>
 
                 <p>
-                    Every lead is synced to your dashboard, with email and WhatsApp
-                    notifications sent directly to you for faster follow-ups.
+                    Access policy details, receive renewal reminders and stay updated with
+                    support tickets through a simple and secure digital experience.
                 </p>
 
-                <!-- <button class="onboarding-btn">Learn More</button> -->
+                <ul class="vault-list">
+                    <li>🔐 Secure login with OTP verification</li>
+                    <li>📄 Policy & service tracking dashboard</li>
+                    <li>🎫 Claim & support ticket updates</li>
+                    <li>🎁 Rewards on eligible actions</li>
+                    <li>📲 Assisted support when needed</li>
+                </ul>
+
+                <p class="vault-note">
+                    Vault features are part of the Paisabada platform experience. Insurance servicing
+                    support is facilitated through authorised channels.
+                </p>
 
             </div>
 
@@ -1632,8 +2024,84 @@
 
 
 
+    <!-- CONTACT -->
+    <section class="section">
+        <h2>Why Choose Paisabada?</h2>
+
+        <div class="why">
+            <div class="why-card blue">
+                <div class="icon">🧠</div>
+                <h4>Simple & Transparent Guidance</h4>
+                <p>Clear recommendations. No jargon.
+                    We explain policies in simple language so you can make informed decisions with confidence.</p>
+            </div>
+
+            <div class="why-card green">
+                <div class="icon">🔐</div>
+                <h4>Secure & Compliance-Driven Platform</h4>
+                <p>Built with strong data privacy standards, structured processes, and an authorised insurance
+                    facilitation framework designed to ensure transparency and trust.</p>
+            </div>
+
+            <div class="why-card yellow">
+                <div class="icon">⚡</div>
+                <h4>Quick Quotes & Assisted Issuance</h4>
+                <p>Compare plans easily and receive guided support throughout the application process for a smooth
+                    experience.</p>
+            </div>
+
+            <div class="why-card purple">
+                <div class="icon">🤝</div>
+                <h4>Human + Technology Support</h4>
+                <p>Real people. Smart systems.
+                    Dedicated assistance from enquiry to post-purchase support whenever you need help.</p>
+            </div>
+
+        </div>
+        <p class="irdai-note">
+            Paisabada Financial Services acts as an authorised POS insurance facilitator. Policies are issued and
+            underwritten by respective insurers.
+        </p>
+    </section>
+
+
     <!-- TOOLS -->
-    <section id="tools">
+    <section id="tools" class="tools-section">
+
+        <h2>Plan Smarter. Decide Better.</h2>
+        <p class="tools-subtext">
+            Smart tools to understand your financial position before choosing any product.
+        </p>
+
+        <div class="grid">
+
+            <div class="card animate">
+                <i class="fa-solid fa-calculator"></i>
+                <h3>SIP Goal Planner</h3>
+                <p>Estimate monthly investments required to achieve your financial goals.</p>
+                <span class="tool-note">Integrated with your Paisabada Vault</span>
+            </div>
+
+            <div class="card animate">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Free Financial Health Assessment</h3>
+                <p>Get a personalised protection gap report in minutes.</p>
+            </div>
+
+            <div class="card animate">
+                <i class="fa-solid fa-id-card"></i>
+                <h3>Credit Readiness Check</h3>
+                <p>Understand your credit health before applying for loans.</p>
+            </div>
+
+        </div>
+
+        <p class="tools-disclaimer">
+            These tools are educational in nature and do not constitute financial or investment advice.
+        </p>
+
+    </section>
+    <!-- <section id="tools">
         <h2>Smart Financial Tools</h2>
         <div class="grid">
             <div class="card animate"><i class="fa-solid fa-calculator"></i>
@@ -1646,10 +2114,12 @@
                 <h3>Credit Score</h3>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- PARTNER -->
-    <section id="partner" class="partner">
+
+
+
+    <!-- <section id="partner" class="partner">
         <h2>Become a PaisaBada Partner</h2>
         <div class="grid">
             <div class="card animate"><i class="fa-solid fa-money-bill-wave"></i>
@@ -1662,26 +2132,28 @@
                 <h3>Training & Support</h3>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- banner section  -->
 
     <div class="tm-banner">
+
         <!-- Left -->
         <div class="tm-left">
             <span class="tm-tag">WITH</span>
 
             <div class="tm-logo">
-                <span class="tm-brand">PaisaBada</span>
-                <span class="tm-domain">INSURANCE.COM</span>
+                <span class="tm-brand">Paisabada Financial Services</span>
+                <span class="tm-domain">Authorised Insurance Facilitation</span>
             </div>
         </div>
 
         <!-- Middle -->
         <div class="tm-middle">
-            <span class="tm-tag">YOU CAN NOW</span>
+            <!-- <span class="tm-tag">THROUGH OUR ASSISTED PLATFORM</span> -->
 
             <div class="tm-actions">
+
                 <div class="tm-action">
                     <div class="icon">
                         <svg viewBox="0 0 24 24">
@@ -1690,7 +2162,7 @@
                             <path d="M9 14l2 2 4-4" />
                         </svg>
                     </div>
-                    <p>Buy a<br><strong>New Policy</strong></p>
+                    <p>Purchase a New<br><strong>Insurance Policy</strong></p>
                 </div>
 
                 <div class="tm-action">
@@ -1700,7 +2172,7 @@
                             <path d="M21 3v6h-6" />
                         </svg>
                     </div>
-                    <p>Renew your<br><strong>Existing Policy</strong></p>
+                    <p>Renew Your<br><strong>Existing Policy</strong></p>
                 </div>
 
                 <div class="tm-action">
@@ -1710,21 +2182,28 @@
                             <path d="M9 12l2 2 4-4" />
                         </svg>
                     </div>
-                    <p>Raise<br><strong>Claims</strong></p>
+                    <p>Submit & Track<br><strong>Claim Requests</strong></p>
                 </div>
+
             </div>
         </div>
 
         <!-- Right -->
         <div class="tm-right">
-            <a href="#" class="tm-btn">EXPLORE NOW</a>
+            <a href="#" class="tm-btn">Access Insurance Services</a>
         </div>
+
     </div>
+
+    <p class="tm-disclaimer">
+        Paisabada Financial Services is an authorised POS entity. Insurance policies are underwritten by respective
+        insurers. Claim settlement is subject to insurer terms and regulatory guidelines.
+    </p>
 
     <!-- ================= INSURANCE PARTNERS ================= -->
     <section class="insurance-partners">
         <h2 class="partners-title">
-            Trusted Insurance <span>Partners</span>
+            Our Insurance <span>Partners</span>
         </h2>
 
         <div class="logo-carousel luxury-fade">
@@ -1761,45 +2240,70 @@
 
         </div>
 
+        <p class="partners-disclaimer">
+            Paisabada Financial Services acts as an authorised POS insurance facilitator. Insurance products are
+            underwritten and issued by respective IRDAI-licensed insurers. We do not underwrite or assume risk. Policy
+            issuance, terms, and claim settlement are subject to the insurer’s guidelines.
+            Logos are property of respective insurance companies and used for identification purposes only.
+        </p>
+
+        <p class="partners-pos">
+            POS Code: (--) | Operating under authorised insurance distribution framework.
+        </p>
+
         <!-- IRDAI DISCLAIMER -->
-        <p class="irdai-note">
+        <!-- <p class="irdai-note">
             PaisaBada is a registered insurance web aggregator. Insurance products are offered by IRDAI-licensed
             insurers.
             IRDAI Registration No: <strong>XXXX</strong>.
+        </p> -->
+    </section>
+
+    <!-- PARTNER -->
+
+    <section id="partner" class="partner">
+
+        <h2>Partner With Paisabada</h2>
+
+        <p class="partner-subtext">
+            Build your financial advisory business with structured support and a compliant distribution model.
         </p>
-    </section>
 
+        <div class="grid">
 
-    <!-- CONTACT -->
-    <section class="section">
-        <h2>Why Choose Paisabada?</h2>
-
-        <div class="why">
-            <div class="why-card blue">
-                <div class="icon">🧠</div>
-                <h4>Simple & Transparent Advice</h4>
-                <p>No jargon. Clear recommendations you can trust.</p>
+            <div class="card animate">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <h3>Structured Earnings Model</h3>
+                <p>Earn as per insurer-approved payout structure with transparent reporting.</p>
             </div>
 
-            <div class="why-card green">
-                <div class="icon">🔐</div>
-                <h4>Secure & Compliant Platform</h4>
-                <p>IRDAI-aligned systems with strong data security.</p>
+            <div class="card animate">
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Personalised Digital Business Suite</h3>
+                <p>Client onboarding links, CRM tracking, vault access and real-time updates.</p>
             </div>
 
-            <div class="why-card yellow">
-                <div class="icon">⚡</div>
-                <h4>Instant Quotes & Issuance</h4>
-                <p>Compare plans and get covered in minutes.</p>
+            <div class="card animate">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h3>Product Training & Sales Support</h3>
+                <p>Regular insurer-led training sessions, call guidance and backend claim assistance.</p>
             </div>
 
-            <div class="why-card purple">
-                <div class="icon">🤝</div>
-                <h4>Human + Tech Support</h4>
-                <p>Expert help backed by smart technology.</p>
+            <div class="card animate">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Compliance & Documentation Support</h3>
+                <p>All partner activities aligned with regulatory and insurer guidelines.</p>
             </div>
+
         </div>
+
+        <p class="partner-disclaimer">
+            Paisabada Financial Services operates under valid POS authorisation. All earnings are subject to insurer
+            payout structure and applicable regulatory norms.
+        </p>
+
     </section>
+
 
     <!-- <section id="contact">
         <h2>Contact Us</h2>
@@ -1825,11 +2329,18 @@
 
             <!-- Brand -->
             <div class="footer-col brand">
-                <h3 class="footer-logo">PaisaBada</h3>
-                <p class="footer-desc">PaisaBada Fintech Solutions Ltd.</p>
+                <h3 class="footer-logo">Paisabada™</h3>
+
+                <p class="footer-desc">
+                    Operated by Wealtrix Fintech Pvt. Ltd. (Technology & Platform Provider)
+                </p>
+                <p class="footer-desc">
+                    Insurance facilitation services are carried out by Paisabada Financial Services (Proprietorship
+                    Firm).
+                </p>
 
                 <div class="social-icons">
-                    <!-- X / Twitter -->
+                    <!-- X -->
                     <a href="#" aria-label="X" class="icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -1869,25 +2380,26 @@
                         </svg>
                     </a>
                 </div>
-
             </div>
 
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#products">Compare Plans</a>
-                <a href="#partner">Become an Advisor</a>
-                <!-- <a href="#">B2B Solutions</a> -->
-                <a href="#">Careers</a>
-                <a href="#">Press Kit</a>
+                <a href="#products">Compare Insurance Plans</a>
+                <a href="#renew">Renew Policy</a>
+                <a href="#claims">Claim Support</a>
+                <a href="#partner">Become a Partner</a>
                 <a href="about.html">About Us</a>
             </div>
 
             <!-- Legal -->
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="terms.html">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
+                <a href="terms.html">Terms & Legal</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <!-- <a href="insurance-disclosure.html">Insurance Disclosure</a> -->
+                <!-- <a href="grievance.html">Grievance Redressal</a> -->
+                <a href="compliance.html">Compliance & Grievance</a>
             </div>
 
             <!-- Contact -->
@@ -1895,24 +2407,55 @@
                 <h4>Contact</h4>
                 <p><strong>Email:</strong><br>support@paisabada.com</p>
                 <p><strong>Phone:</strong><br>1800 266 0101</p>
+                <p><strong>Business Hours:</strong><br>Mon–Sat, 10 AM – 7 PM</p>
 
                 <p class="address">
-                    <strong>Registered & Corporate Office:</strong><br>
-                    The ORB Sahar, 4 & 4A, 1st Floor,<br>
-                    A Wing, Marol Village, Andheri East,<br>
-                    Mumbai 400 099, Maharashtra, India
+                    <strong>Registered Office of Paisabada Financial Services:</strong><br>
+                    [Actual proprietorship address]
+                </p>
+
+                <p class="address">
+                    <strong>Technology Office:</strong><br>
+                    Wealtrix Fintech Pvt Ltd<br>
+                    [Registered Pvt Ltd address]
                 </p>
             </div>
 
         </div>
 
+        <!-- Regulatory Disclosure -->
+        <div class="footer-disclosure">
+            Paisabada Financial Services is an Authorised POS insurance facilitator.
+            Insurance policies are issued by respective IRDAI-licensed insurance companies.
+            We do not underwrite insurance policies. Final policy issuance, pricing and claims settlement are subject to
+            insurer terms and conditions.
+        </div>
+
+        <div class="footer-mini-bar">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms.html">Terms & Conditions</a>
+            <span>|</span>
+            <a href="compliance.html">Insurance Disclosure</a>
+            <span>|</span>
+            <a href="compliance.html#grievance">Grievance Officer</a>
+            <span>|</span>
+            <span>POS Code: (--)</span>
+        </div>
+
         <div class="footer-bottom">
-            © 2026 Paisabada™ Financial Services. Powered by Wealtrix™ Fintech Pvt Ltd.
+            © 2026 Paisabada™. Technology powered by Wealtrix Fintech Pvt Ltd.
+            Insurance facilitation by Paisabada Financial Services.
         </div>
     </footer>
 
 
-    <a href="https://wa.me/917620444000" class="whatsapp">
+    <!-- <a href="https://wa.me/917620444000" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a> -->
+
+    <a href="https://wa.me/917620444000" class="whatsapp" title="Talk to an Advisor"
+        aria-label="Talk to an Advisor on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -1965,7 +2508,7 @@
 
         const btnTexts = [
             "Best plans, Just for you →",
-            "Protect your future today →",
+            "Explore Plans Today →",
             "Explore smart coverage →"
         ];
 
@@ -2001,9 +2544,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
