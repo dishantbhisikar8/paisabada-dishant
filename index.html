@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaisaBada – Smart Financial Platform</title>
     <meta name="description"
-        content="Compare Insurance, Mutual Funds & Loans. Become a financial partner and grow with PaisaBada.">
+        content="Compare insurance plans, track policies, and access assisted insurance services through Paisabada Financial Services. Secure digital vault and expert support for smarter protection decisions.">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -98,6 +98,12 @@
 
         .products .card {
             background: #fff;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .card i {
@@ -525,10 +531,11 @@
         /* COMPLIANCE */
         .compliance {
             margin-top: 8px;
-            font-size: 12px;
+            font-size: 10px;
             opacity: .75;
             max-width: 520px;
             text-align: left;
+            color: #94a3b8;
         }
 
         /* MOBILE CENTER */
@@ -1029,16 +1036,18 @@
 
         /* ================= PROMO SLIDER ================= */
 
-        .promo {
+        /* .promo {
             position: relative;
             width: 100%;
             height: 420px;
             border-radius: 24px;
             overflow: hidden;
-        }
+        } */
+
+
 
         /* FULL IMAGE SLIDE */
-        .slide {
+        /* .slide {
             position: absolute;
             inset: 0;
             background-size: cover;
@@ -1048,11 +1057,59 @@
             transition: opacity .6s ease;
             display: flex;
             justify-content: flex-start;
+        } */
+
+
+        /* .slide.active {
+            opacity: 1;
+            z-index: 1;
+        } */
+
+        .promo {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 260px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            opacity: 0;
+            transition: opacity .6s ease;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+
+            padding: 16px;
         }
 
         .slide.active {
             opacity: 1;
-            z-index: 1;
+        }
+
+        @media (max-width:480px) {
+
+            .promo {
+                height: 220px;
+            }
+
+            .slide-content h2 {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
         }
 
         /* DARK OVERLAY */
@@ -1089,7 +1146,9 @@
         .btn-button {
             background: #22c55e;
             color: #020617;
-            padding: 14px 20px;
+            padding: 8px 14px;
+            /* पहले 14px 20px था */
+            font-size: 13px;
             border-radius: 12px;
             text-decoration: none;
             display: inline-flex;
@@ -1101,14 +1160,22 @@
         .slide-btn {
             position: absolute;
             left: 50%;
-            bottom: 36px;
+            bottom: 25px;
             transform: translateX(-50%);
             z-index: 3;
             overflow: hidden;
             transition: all .3s ease;
             box-shadow:
-                0 10px 22px rgba(2, 6, 23, .25),
+                0 6px 14px rgba(2, 6, 23, .25),
                 inset 0 -2px 0 rgba(255, 255, 255, .15);
+        }
+
+        @media (max-width:480px) {
+
+            .btn-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
 
         .slide-btn:hover {
@@ -1181,7 +1248,7 @@
             }
 
             .promo {
-                height: 360px;
+                height: 200px;
             }
 
             .slide-content h2 {
@@ -1863,8 +1930,15 @@
                 </p> -->
 
                 <p class="compliance">
-                    Insurance services facilitated through Paisabada Financial Services (Authorised POS).
+                    Insurance services facilitated through Paisabada Financial Services (Authorised POS Code:
+                    (IP382943)).
                 </p>
+
+                <!-- <p class="compliance">
+                    Insurance services are facilitated through Paisabada Financial Services (Authorised POS Code:
+                    IP382943).
+                    Insurance policies are issued by IRDAI-licensed insurers and are subject to insurer underwriting.
+                </p> -->
 
             </div>
 
@@ -1896,29 +1970,37 @@
 
                 <div class="products">
 
-                    <div class="card">
-                        <img src="car.png">
-                        <span>Motor Insurance</span>
-                        <small>Instant renewal & new policy quotes</small>
-                    </div>
+                    <a href="motor-insurance.html" class="card-link">
+                        <div class="card">
+                            <img src="car.png">
+                            <span>Motor Insurance</span>
+                            <small>Instant renewal & new policy quotes</small>
+                        </div>
+                    </a>
 
-                    <div class="card">
-                        <img src="healthcare.png">
-                        <span>Health Insurance</span>
-                        <small>Family & individual coverage options</small>
-                    </div>
+                    <a href="health-insurance.html" class="card-link">
+                        <div class="card">
+                            <img src="healthcare.png">
+                            <span>Health Insurance</span>
+                            <small>Family & individual coverage options</small>
+                        </div>
+                    </a>
 
-                    <div class="card">
-                        <img src="family-insurance.png">
-                        <span>Term Life Insurance</span>
-                        <small>High cover at affordable premium</small>
-                    </div>
+                    <a href="term-life-insurance.html" class="card-link">
+                        <div class="card">
+                            <img src="family-insurance.png">
+                            <span>Term Life Insurance</span>
+                            <small>High cover at affordable premium</small>
+                        </div>
+                    </a>
 
-                    <div class="card">
-                        <img src="possibility.png">
-                        <span>Personal Accident</span>
-                        <small>Protection against unexpected events</small>
-                    </div>
+                    <a href="personal-accident-insurance.html" class="card-link">
+                        <div class="card">
+                            <img src="personal.png">
+                            <span>Personal Accident</span>
+                            <small>Protection against unexpected events</small>
+                        </div>
+                    </a>
 
                 </div>
 
@@ -1946,21 +2028,21 @@
             <!-- RIGHT -->
             <div class="promo">
 
-                <div class="slide active" style="background-image:url('health.jpg')">
+                <div class="slide active" style="background-image:url('offer-1.jpg')">
                     <div class="slide-content">
-                        <h2>Safeguard your family<br />and your <span>health!</span></h2>
+                        <!-- <h2>Safeguard your family<br />and your <span>health!</span></h2> -->
                     </div>
                 </div>
 
-                <div class="slide" style="background-image:url('health-2.jpg')">
+                <div class="slide" style="background-image:url('offer-3.jpg')">
                     <div class="slide-content">
-                        <h2>Plans that<br /><span>protect</span> your future</h2>
+                        <!-- <h2>Plans that<br /><span>protect</span> your future</h2> -->
                     </div>
                 </div>
 
-                <div class="slide" style="background-image:url('health-3.jpg')">
+                <div class="slide" style="background-image:url('offer-4.jpg')">
                     <div class="slide-content">
-                        <h2>Smart insurance<br />for <span>every stage</span></h2>
+                        <!-- <h2>Smart insurance<br />for <span>every stage</span></h2> -->
                     </div>
                 </div>
 
@@ -2056,7 +2138,7 @@
 
     <!-- CONTACT -->
     <section class="section">
-        <h2>Why Choose Paisabada?</h2>
+        <h2>Why Choose <span class="heading-name">Paisabada? </span></h2>
 
         <div class="why">
             <div class="why-card blue">
@@ -2240,32 +2322,32 @@
 
             <!-- ROW 1 (Left → Right) -->
             <div class="logo-track left">
-                <img src="LIC-Logo.png" alt="LIC">
-                <img src="hdfc.jpg" alt="HDFC Life">
-                <img src="icici-pru-life.webp" alt="ICICI Prudential">
-                <img src="sbi-life.png" alt="SBI Life">
-                <img src="max-life.png" alt="Max Life">
-                <img src="tata-AIA.png" alt="Tata AIA">
-                <img src="kotak-life.png" alt="Kotak Life">
-                <img src="bajaj.png" alt="Bajaj Allianz Life">
-                <img src="go digit.png" alt="Go Digit Life Insurance Limited">
-                <img src="union.png" alt="Union Dai-Ichi Life Insurance Company Limited">
-                <img src="aditya-birla.jfif" alt="Aditya Birla SunLife Insurance Company Limited">
+                <img src="logos/LIC-Logo.png" alt="LIC">
+                <img src="logos/hdfc.jpg" alt="HDFC Life">
+                <img src="logos/icici-pru-life.webp" alt="ICICI Prudential">
+                <img src="logos/sbi-life.png" alt="SBI Life">
+                <img src="logos/max-life.png" alt="Max Life">
+                <img src="logos/tata-AIA.png" alt="Tata AIA">
+                <img src="logos/kotak-life.png" alt="Kotak Life">
+                <img src="logos/bajaj.png" alt="Bajaj Allianz Life">
+                <img src="logos/go digit.png" alt="Go Digit Life Insurance Limited">
+                <img src="logos/union.png" alt="Union Dai-Ichi Life Insurance Company Limited">
+                <img src="logos/aditya-birla.jfif" alt="Aditya Birla SunLife Insurance Company Limited">
             </div>
 
             <!-- ROW 2 (Right → Left) -->
             <div class="logo-track right">
-                <img src="Star_Health_and_Allied_Insurance.svg.png" alt="Star Health">
-                <img src="HDFC-Ergo-logo.png" alt="HDFC ERGO">
-                <img src="Icici-Lombard-Logo-Vector.svg-.png" alt="ICICI Lombard">
-                <img src="tata.png" alt="Tata AIG">
-                <img src="new-india-life.png" alt="New India Assurance">
-                <img src="niva.png" alt="Niva Bupa">
-                <img src="care-health.png" alt="Care Health">
-                <img src="met-life.png" alt="MetLife India Insurance Company Limited">
-                <img src="reliance-general.png" alt="Reliance General">
-                <img src="acko.png" alt="Acko Life Insurance Limited">
-                <img src="credit-life.png" alt="CreditAccess Life Insurance Limited">
+                <img src="logos/Star_Health_and_Allied_Insurance.svg.png" alt="Star Health">
+                <img src="logos/HDFC-Ergo-logo.png" alt="HDFC ERGO">
+                <img src="logos/Icici-Lombard-Logo-Vector.svg-.png" alt="ICICI Lombard">
+                <img src="logos/tata.png" alt="Tata AIG">
+                <img src="logos/new-india-life.png" alt="New India Assurance">
+                <img src="logos/niva.png" alt="Niva Bupa">
+                <img src="logos/care-health.png" alt="Care Health">
+                <img src="logos/met-life.png" alt="MetLife India Insurance Company Limited">
+                <img src="logos/reliance-general.png" alt="Reliance General">
+                <img src="logos/acko.png" alt="Acko Life Insurance Limited">
+                <img src="logos/credit-life.png" alt="CreditAccess Life Insurance Limited">
             </div>
 
         </div>
@@ -2278,7 +2360,7 @@
         </p>
 
         <p class="partners-pos">
-            POS Code: (--) | Operating under authorised insurance distribution framework.
+            POS Code: (IP382943) | Operating under authorised insurance distribution framework.
         </p>
 
         <!-- IRDAI DISCLAIMER -->
@@ -2293,7 +2375,7 @@
 
     <section id="partner" class="partner">
 
-        <h2>Partner With Paisabada</h2>
+        <h2>Partner With <span class="heading-name">Paisabada </span></h2>
 
         <p class="partner-subtext">
             Build your financial advisory business with structured support and a compliant distribution model.
@@ -2436,18 +2518,18 @@
             <div class="footer-col">
                 <h4>Contact</h4>
                 <p><strong>Email:</strong><br>support@paisabada.com</p>
-                <p><strong>Phone:</strong><br>1800 266 0101</p>
+                <p><strong>Phone:</strong><br>+91-7620444000</p>
                 <p><strong>Business Hours:</strong><br>Mon–Sat, 10 AM – 7 PM</p>
 
                 <p class="address">
                     <strong>Registered Office of Paisabada Financial Services:</strong><br>
-                    [Actual proprietorship address]
+                    [Plot No 91, Shri Ram Villa, Jijamata Nagar 4, Tarodi KH, Nagpur - 441001]
                 </p>
 
                 <p class="address">
                     <strong>Technology Office:</strong><br>
                     Wealtrix Fintech Pvt Ltd<br>
-                    [Registered Pvt Ltd address]
+                    [Plot No 91, Shri Ram Villa, Jijamata Nagar 4, Tarodi KH, Nagpur - 441001]
                 </p>
             </div>
 
@@ -2455,11 +2537,22 @@
 
         <!-- Regulatory Disclosure -->
         <div class="footer-disclosure">
-            Paisabada Financial Services is an Authorised POS insurance facilitator.
+            <!-- Paisabada Financial Services is an Authorised POS insurance facilitator.
             Insurance policies are issued by respective IRDAI-licensed insurance companies.
             We do not underwrite insurance policies. Final policy issuance, pricing and claims settlement are subject to
-            insurer terms and conditions.
+            insurer terms and conditions. -->
+
+            Paisabada Financial Services acts as an authorised POS insurance facilitator.
+            Insurance policies are issued and underwritten by respective IRDAI-licensed insurers.
+
+            Paisabada Financial Services does not underwrite insurance policies and does not guarantee claim settlement.
+
+            Policy issuance, premium, coverage and claim settlement are subject to insurer terms and regulatory
+            guidelines.
         </div>
+        <p style="margin-top:10px;font-size:12px;color:#94a3b8;text-align:center;">
+            Insurance is the subject matter of solicitation. Please read policy documents carefully before purchase.
+        </p>
 
         <!-- <div class="footer-mini-bar">
             <a href="privacy.html">Privacy Policy</a>
@@ -2574,4 +2667,3 @@
 </body>
 
 </html>
-
